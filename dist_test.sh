@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+
+# fine-tuned CASIA
+CONFIG=configs/casia_val/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_casia_val_focal.py
+CHECKPOINT=work_dirs/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_casia_val_focal/best_mIoU_iter_25000.pth
+
+# fine-tuned Coverage
+#CONFIG=configs/coverage/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_coverage_val_focal.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_coverage_val_focal/best_mIoU_iter_2350.pth
+
+# fine-tuned NIST16
+#CONFIG=configs/coverage/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_coverage_val_focal.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_nist16_val_focal_16k/best_mIoU_iter_13350.pth
+
+# pre-trained CASIA
+#CONFIG=configs/casia_val/hssn_soft_internimage_freeze_kernel_t_512_160k_manipulation_casia_val_focal.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_t_512_160k_manipulation_focal/best_mIoU_iter_160000.pth
+
+# pre-trained Coverage
+#CONFIG=configs/coverage/hssn_soft_internimage_t_512_160k_manipulation_focal_test_coverage.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_t_512_160k_manipulation_focal/best_mIoU_iter_160000.pth
+
+# pre-trained NIST16
+#CONFIG=configs/nist16/hssn_soft_internimage_t_512_160k_manipulation_focal_test_nist16.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_t_512_160k_manipulation_focal/best_mIoU_iter_160000.pth
+
+# pre-trained Columbia
+#CONFIG=configs/columbia/hssn_soft_internimage_t_512_160k_manipulation_focal_test_columbia.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_t_512_160k_manipulation_focal/best_mIoU_iter_160000.pth
+
+# pre-trained IMD20
+#CONFIG=configs/imd20/hssn_soft_internimage_t_512_160k_manipulation_focal_test_imd20.py
+#CHECKPOINT=work_dirs/hssn_soft_internimage_t_512_160k_manipulation_focal/best_mIoU_iter_160000.pth
+
+
+CUDA_VISIBLE_DEVICES=0 python test.py $CONFIG $CHECKPOINT --eval mIoU --more_eval true

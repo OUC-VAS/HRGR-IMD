@@ -1,4 +1,5 @@
-# HRGR: Enhancing Image Manipulation Detection via Hierarchical Region-aware Graph Reasoning
+# HRGR: Enhancing Image Manipulation Detection via Hierarchical Region-aware Graph Reasoning (ICME2025)
+**Authors: Xudong Wang, Jiaran Zhou, Huiyu Zhou , Junyu Dong, [Yuezun Li](https://yuezunli.github.io/) (corresponding author)**
 
 ## Usage
 
@@ -11,7 +12,7 @@ conda create -n hrgr python=3.9 -y
 conda activate hrgr
 ```
 
-+ Install torch==1.11 with CUDA==11.3:
++ Install `torch==1.11` with `CUDA==11.3`:
 
 ```bash
 conda install numpy==1.24.3 pytorch==1.11.0 torchvision==0.12.0 cudatoolkit=11.3 -c pytorch -y
@@ -38,7 +39,7 @@ cd ./ops_ssn && python setup.py install && cd ../
 ### Data Preparation
 
 
-Download `data.zip` and `work_dirs.zip` to obtain the preprocessed datasets and trained weights form [this]().
+Download `data.zip` and `work_dirs.zip` to obtain the preprocessed datasets and trained weights form [Google Drive](https://drive.google.com/drive/folders/10UpyruBp7Lw-t4eIiH1CeCdITvW6Dgex?usp=sharing).
 Extract them and place them in the root of this project.
 
 
@@ -68,4 +69,15 @@ More examples can be found in `dist_train.sh`. Uncomment the corresponding conte
 
 ```bash
 sh dist_train.sh
+```
+
+## Citations
+If HRGR helps your research or work, please kindly cite our paper. The following is a BibTeX reference.
+```bibtex
+@inproceedings{wang2025hrgr,
+  title={HRGR: Enhancing Image Manipulation Detection via Hierarchical Region-aware Graph Reasoning},
+  author={Wang, Xudong and Zhou, Jiaran and Zhou, Huiyu and Dong, Junyu and Li, Yuezun},
+  booktitle={2025 IEEE International Conference on Multimedia and Expo (ICME)},
+  year={2025}
+}
 ```
